@@ -154,35 +154,16 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12 text-right">
-                                        <button class="btn btn-outline-dark btn-labeled btn-sm" id="addCp" type="button" name="submitButton"><span class="oi oi-plus"></span</button>
+                                        <button class="btn btn-outline-dark btn-labeled btn-sm" id="addCp" type="button" name="submitButton" onclick="addElement()"><span class="oi oi-plus"></span</button>
                                     </div>
                                 </div>
-                                <div class="counterpartyGroup">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="counterparty">Counterparty</label>
-                                                <select autofoucus class="form-control" data-role="select" id="cp1" name="cp1"  required>
-                                                    <option value="1">counterparty1</option>
-                                                    <option value="2">counterparty2</option>
-													<option value="3">counterparty3</option>
-                                                </select>
-                                                <div class="invalid-feedback">Please choose a counterparty</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="role">Role of counterparty</label>
-                                                <select autofoucus class="form-control" data-role="select" id="role1" name="role1"  required>
-                                                    <option value="1">role1</option>
-                                                    <option value="2">role2</option>
-													<option value="3">role3</option>
-                                                </select>
-                                                <div class="invalid-feedback">Please choose a role of the counterparty</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+                              <div id="content">
+
+                              </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -196,17 +177,17 @@
                 </div>
             </form>
         </div>
-        
+
         <!-- Metro 4 -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
-        
+
         <!--Bootstrap 4 Javascript-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-        
+        <script type="text/javascript" src="O:\Adam\Project\Deals Report\Kelly working\static\AddDeleteButton.js"></script>
         <script type="text/javascript" src="O:\Adam\Project\Deals Report\Kelly working\static\datepickerEnabler.js"></script>
    </body>
 </html>
