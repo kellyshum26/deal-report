@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <!--Bootstrap 4 CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!--open iconic-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+        <!-- Metro 4 -->
+        <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+   </head>
+   <body>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">Deals Recording System</a>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <form action = "/" method = "post" autocomplete=off>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <nav class="nav flex-column bg-light">
+                            <a class="p-1 nav-link active" href="/add">Add deal</a>
+                            <a class="p-1 nav-link" href="edit">Edit deal</a>
+                            <a class="p-1 nav-link" href="report_selector">Deals report</a>
+                        </nav>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Project Info.</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="manager">Investment Manager</label>
+                                            <select autofoucus class="form-control" data-role="select" id="manager" name="manager" data-filter=false required>
+                                                <option value="1">manager1</option>
+												<option value="2">manager2</option>
+												<option value="3">manager3</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please choose a investment manager</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="country">Country</label>
+                                            <select class="form-control" data-role="select" id="country" name="country" required>
+                                                <option value="1">country1</option>
+                                                <option value="2">country2</option>
+												<option value="3">country3</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please choose a coutnry</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="name">Project Name</label>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="dealsize">Deal Size</label>
+                                            <input type="text" class="form-control" name="dealsize" id="dealsize" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="name">Description</label>
+                                            <input type="text" class="form-control" name="description" id="description" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-check ml-4">
+                                        <input type="checkbox" class="form-check-input" id="dateTBC">
+                                        <label class="form-check-label" for="dateTBC">Date TBC</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="startDate">Deal Initiation Date</label>
+                                            <input type="text" class="form-control" name="startDate" id="startDate" data-role="calendarpicker" data-input-format="%y/%m/%d"  data-cls-calendar-header="bg-dark" data-cls-selected="bg-dark fg-white" data-on-change="dateChange" required>
+                                            <div class="invalid-feedback">Please enter expeceted start date</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="exitDate">Expected Exit Date</label>
+                                            <input type="text" class="form-control" name="exitDate" id="exitDate" data-role="calendarpicker" data-input-format="%y/%m/%d"  data-cls-calendar-header="bg-dark" data-cls-selected="bg-dark fg-white" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <select autofoucus class="form-control" data-role="select" id="status" name="status" data-filter=false required>
+                                                <option value="potential">Potential</option>
+                                                <option value="invested">Invested</option>
+                                                <option value="follow">Invested-Follow on</option>
+                                                <option value="exited">Exited</option>
+                                                <option value="aborted">Aborted</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please choose a project status</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="priority">Priority</label>
+                                            <select autofoucus class="form-control" data-role="select" id="priority" name="priority" data-filter=false required>
+                                                <option value="l">Low</option>
+                                                <option value="m">Medium</option>
+                                                <option value="h">High</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please choose a project status</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="strategy">Strategy</label>
+                                            <select autofoucus class="form-control" data-role="select" id="strategy" name="strategy" data-filter=false required>
+                                                <option value="1">Strategy1</option>
+                                                <option value="2">Strategy2</option>
+												<option value="3">Strategy3</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please choose a strategy</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Counterparty</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12 text-right">
+                                        <button class="btn btn-outline-dark btn-labeled btn-sm" id="addCp" type="button" name="submitButton"><span class="oi oi-plus"></span</button>
+                                    </div>
+                                </div>
+                                <div class="counterpartyGroup">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="counterparty">Counterparty</label>
+                                                <select autofoucus class="form-control" data-role="select" id="cp1" name="cp1"  required>
+                                                    <option value="1">counterparty1</option>
+                                                    <option value="2">counterparty2</option>
+													<option value="3">counterparty3</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please choose a counterparty</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="role">Role of counterparty</label>
+                                                <select autofoucus class="form-control" data-role="select" id="role1" name="role1"  required>
+                                                    <option value="1">role1</option>
+                                                    <option value="2">role2</option>
+													<option value="3">role3</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please choose a role of the counterparty</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                    </div>
+                    <div class="col-lg-3">
+                        <button class="btn btn-success btn-lg btn-block" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Metro 4 -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+        
+        <!--Bootstrap 4 Javascript-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+        
+        <script type="text/javascript" src="O:\Adam\Project\Deals Report\Kelly working\static\datepickerEnabler.js"></script>
+   </body>
+</html>
